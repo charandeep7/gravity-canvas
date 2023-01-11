@@ -23,6 +23,7 @@ const gravity = 1;
 const friction = 0.8999;
 const colors = ['#2185C5','#7ECEFD','#FFF6E5','#FF7F66'];
 const cats = ['😺','😸','😹','😻','😼','😽','🙀','😿','😾','🐱']
+var noOfBalls = 1;
 
 canvas.height = innerHeight;
 canvas.width = innerWidth;
@@ -108,10 +109,9 @@ function createBalls(n)
     return balls;
 }
 
-
-function init(n=1)
+function init(noOfBalls)
 {
-    const balls = createBalls(n);
+    const balls = createBalls(noOfBalls);
     function animate()
     {
         requestAnimationFrame(animate);
@@ -124,14 +124,15 @@ function init(n=1)
 addEventListener('resize',()=>{
     canvas.height = innerHeight;
     canvas.width = innerWidth;
-    init()
+    init(noOfBalls)
 })
-addEventListener('load',()=>init())
+addEventListener('load',()=>init(noOfBalls))
 
 addEventListener('keypress',(e)=>{
     if(e.key === "Enter"){
         if(input.value <= 2000 && input.value >= 0){
-            init(input.value)
+            noOfBalls = input.value
+            init(noOfBalls)
             document.querySelector('p').style.color = randomColor(null,true);
             document.getElementById('cat').textContent = cats[Math.floor(Math.random() * cats.length)]
         }
