@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="gravity.png" type="image/x-icon">
+    <script src="app.js" defer></script>
+    <title>Gravity</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        .kitish-container{
+            position: relative;
+            min-height: 100vh;
+            max-width: 100vw;
+        }
+        canvas{
+            position: absolute;
+            background-color: black;
+            z-index: 1;
+        }
+        .heading{
+            position: absolute;
+            width: 450px;
+            height: fit-content;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 1px 1px 5px 2px #000,-1px -1px 5px 2px #000;
+        }
+        .heading h1:nth-child(2)::first-letter{
+            color: red;
+        }
+        .heading h1{
+            color: #fff;
+            text-align: center;
+            font-family: 'Silkscreen', cursive;
+            font-size: 3.5rem;
+            letter-spacing: .4em;
+            text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+        }
+        .heading p{
+            color: palevioletred;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: monospace;
+            font-family: 'Silkscreen', cursive;
+            margin: 1em 0 2em 0;
+        }
+        .heading input{
+            position: relative;
+            border: none;
+            outline: none;
+            color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 25px;
+            text-align: center;
+        }
+        #cat{
+            font-size: 3rem;
+        }
+        #username{
+            overflow-x: auto;
+        }
+        ::placeholder{
+            color: green;
+            opacity: .7;
+        }
+        @media screen and (max-width: 450px) {
+            .heading{
+                width: 250px;
+            }
+            .heading h1{
+                font-size: 1.5rem;
+            }
+        }
+        @media screen and (max-width: 300px){
+            .heading{
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kitish-container">
+        <canvas></canvas>
+        <div class="heading">
+            <h1>Hey</h1>
+            <h1 id="username">KITISH</h1>
+            <p>I love cat <span id="cat">😽</span></p>
+            <input type="number" placeholder="Enter" min="0" max="2000" />
+        </div>
+    </div>
+</body>
+</html>
